@@ -26,6 +26,13 @@ export type FetchResult =
       error: null;
     };
 
+/**
+ * API Client implementation for This(hello.ts) API
+ *
+ * - This method is intended to be used within Client-Side bundle.
+ * - In the development environment, the Client-Side bundle contains `handler`(default export of this file).
+ * - In the production environment, `handler` is not included in the Client-Side bundle due to the Tree-Shaking.
+ *  */
 export const fetchHello = (): Promise<FetchResult> => {
   return fetch("/api/hello")
     .then((r) => {
